@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sanberappflutter/tugas/tugas12/HomeScreen.dart';
+import 'package:sanberappflutter/tugas/tugas12/LoginScreen.dart';
 import 'tugas/tugas11/Telegram.dart';
 
 void main() {
@@ -16,7 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Telegram(),
+      home: LoginScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
