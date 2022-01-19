@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:sanberappflutter/tugas/tugas13/DrawerScreen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        title: Text("Home"),
+        actions: const <Widget>[
+          Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Icon(Icons.search),
+          ),
+        ],
+      ),
       body: Wrap(
         children: <Widget>[
           Expanded(
@@ -17,9 +26,6 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  const SizedBox(
-                    height: 36,
-                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
@@ -34,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 24,
+                    height: 12,
                   ),
                   const Text(
                     "WELCOME,",
@@ -98,33 +104,36 @@ class HomeScreen extends StatelessWidget {
                       childAspectRatio: 3 / 2,
                       children: <Widget>[
                         Container(
-                          padding: EdgeInsets.all(2),
-                          height: 10,
+                          alignment: Alignment.center,
                           child: Image.asset(
                             'assets/img/Monas.png',
-                            fit: BoxFit.contain,
+                            height: 80,
+                            fit: BoxFit.fitHeight,
                           ),
                         ),
                         // ignore: sized_box_for_whitespace
                         Container(
-                          height: 20,
+                          alignment: Alignment.center,
                           child: Image.asset(
-                            'assets/img/Monas.png',
-                            fit: BoxFit.contain,
+                            'assets/img/Berlin.png',
+                            height: 80,
+                            fit: BoxFit.fitHeight,
                           ),
                         ),
                         Container(
-                          height: 20,
+                          alignment: Alignment.center,
                           child: Image.asset(
-                            'assets/img/Monas.png',
-                            fit: BoxFit.contain,
+                            'assets/img/Tokyo.png',
+                            height: 80,
+                            fit: BoxFit.fitHeight,
                           ),
                         ),
                         Container(
-                          height: 20,
+                          alignment: Alignment.center,
                           child: Image.asset(
-                            'assets/img/Monas.png',
-                            fit: BoxFit.contain,
+                            'assets/img/Roma.png',
+                            height: 80,
+                            fit: BoxFit.fitHeight,
                           ),
                         ),
                       ],
@@ -136,6 +145,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+      drawer: DrawerScreen(),
     );
   }
 }
