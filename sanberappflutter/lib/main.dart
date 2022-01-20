@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sanberappflutter/tugas/tugas13/HomeScreen.dart';
-import 'package:sanberappflutter/tugas/tugas13/LoginScreen.dart';
+import 'package:sanberappflutter/tugas/tugas14/get_data.dart';
 
-import 'tugas/tugas13/Navigation.dart';
 
 
 void main() {
@@ -20,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginScreen(),
+      home: GetDataScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
