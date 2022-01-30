@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import '../main.dart';
 import 'home.dart';
@@ -29,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 children: [
                   Text(
-                    "Sign Up",
+                    "Login",
                     style: TextStyle(fontSize: 30),
                   ),
                   Image.network(
@@ -149,7 +151,12 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Don't have an account? "),
+                        Text(
+                          "Don't have an account? ",
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
                         TextButton(
                           onPressed: () {
                             Navigator.of(context)
@@ -159,7 +166,10 @@ class _LoginPageState extends State<LoginPage> {
                           },
                           child: Text(
                             "create a new account",
-                            style: TextStyle(color: Colors.green),
+                            style: TextStyle(
+                              color: Colors.green,
+                              fontSize: 12,
+                            ),
                           ),
                         ),
                       ],
