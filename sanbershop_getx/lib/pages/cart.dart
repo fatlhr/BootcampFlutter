@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 //import 'package:gap/gap.dart';
 import 'package:getxfire/getxfire.dart';
 import 'package:sanbershop_getx/controllers/cart_controller.dart';
@@ -33,7 +34,7 @@ class _CartPageState extends State<CartPage> {
               Positioned.fill(
                 child: ListView.builder(
                   shrinkWrap: true,
-                  itemCount: cartController.cartItems.length,
+                  itemCount: 2,
                   padding: EdgeInsets.all(8),
                   itemBuilder: (context, index) => Card(
                     elevation: 0,
@@ -52,7 +53,7 @@ class _CartPageState extends State<CartPage> {
                                       .cartItems[index]["product"]["image"])),
                             ),
                           ),
-                          SizedBox(width: 16),
+                          Gap(16),
                           Expanded(
                             child: Padding(
                               padding: const EdgeInsets.only(right: 16.0),
@@ -260,6 +261,4 @@ class _CartPageState extends State<CartPage> {
       ),
     );
   }
-
-  
 }

@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:getxfire/getxfire.dart';
 import 'package:sanbershop_getx/controllers/categories_controller.dart';
+import '../main.dart';
 import 'cart.dart';
+import 'profile.dart';
+import 'splash.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -13,6 +16,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  TextEditingController username = TextEditingController();
   CategoriesController categoriesController = CategoriesController();
   @override
   Widget build(BuildContext context) {
@@ -67,7 +71,7 @@ class _HomeViewState extends State<HomeView> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => CartPage(),
+                    builder: (context) => Profile(),
                   ),
                 );
               },
@@ -83,10 +87,9 @@ class _HomeViewState extends State<HomeView> {
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: IconButton(
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => CartPage(),
-                ),
+              authController.logout();
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (_) => SplashScreen()),
               );
             },
             icon: Icon(Icons.exit_to_app_outlined),
@@ -177,6 +180,7 @@ class _HomeViewState extends State<HomeView> {
           },
           icon: Icon(Icons.shopping_cart_outlined),
         ),
+        
       ],
     );
   }

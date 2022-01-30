@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:getxfire/getxfire.dart';
 import 'package:sanbershop_getx/pages/home.dart';
+import 'package:sanbershop_getx/pages/splash.dart';
+import 'controllers/auth_controller.dart';
 
-void main() {
+AuthController authController = AuthController();
+
+void main() async {
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
@@ -12,11 +19,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'SanberCode Final Project',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeView(),
+      home: Obx(
+        () {
+          if (authController.authenicated.value) {
+            return const HomeView();
+          } else {
+            return const SplashScreen();
+          }
+        },
+      ),
     );
   }
 }
